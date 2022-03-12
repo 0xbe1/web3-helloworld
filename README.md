@@ -32,3 +32,7 @@ yarn start
 
 Got error messaging "Nonce too high. Expected nonce to be 2 but got 4. Note that transactions can't be queued when automining."?
 MetaMask -> Settings -> Advanced -> Reset Account.
+
+## TODO
+
+Deploy to testnet.
