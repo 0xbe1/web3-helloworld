@@ -1,5 +1,5 @@
 {
-  "name": "hardhat-quickstart",
+  "name": "web3-helloworld",
   "version": "1.0.0",
   "scripts": {
     "start": "react-scripts start",
