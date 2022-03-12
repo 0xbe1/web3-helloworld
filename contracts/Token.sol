@@ -1,25 +1,11 @@
 //SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-import "hardhat/console.sol";
+import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 
-contract Token {
-  string public name = "Be True Token";
-  string public symbol = "BTT";
-  uint public totalSupply = 1000;
-  mapping(address => uint) balances;
-
-  constructor() {
-    balances[msg.sender] = totalSupply;
-  }
-
-  function transfer(address to, uint amount) external {
-    require(balances[msg.sender] >= amount, "Not enough tokens");
-    balances[msg.sender] -= amount;
-    balances[to] += amount;
-  }
-
-  function balanceOf(address account) external view returns (uint) {
-    return balances[account];
-  }
+contract Token is ERC20 {
+  constructor(string memory name, string memory symbol) ERC20(name, symbol) {
+    // similarly to how 1 Eth is made up of 10^18 wei.
+        _mint(msg.sender, 1000 * (10 ** 18));
+    }
 }

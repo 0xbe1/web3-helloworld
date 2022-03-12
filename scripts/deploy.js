@@ -15,7 +15,7 @@ async function main() {
   const greeter = await Greeter.deploy("Hello, World!");
 
   const Token = await hre.ethers.getContractFactory("Token");
-  const token = await Token.deploy();
+  const token = await Token.deploy("Be True Token", "BTT");
 
   await greeter.deployed();
   await token.deployed();
